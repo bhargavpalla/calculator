@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_ht"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="@dimen/edit_text_margtop"
+        android:layout_marginRight="@dimen/margin"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toTopOf="@+id/constr">
+
+    </EditText>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        app:layout_constraintBottom_toTopOf="@+id/constr4"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/result"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/result"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/modulo"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/modulo"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+
+            android:text="@string/modulo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/result"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        app:layout_constraintBottom_toTopOf="@+id/constr3"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/one"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_wdt"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/one"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/two"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/two"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/two"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/three"
+            app:layout_constraintLeft_toRightOf="@+id/one"
+            app:layout_constraintRight_toLeftOf="@+id/three">
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+
+            android:text="@string/div"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/three"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/three"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/three"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/div"
+            app:layout_constraintLeft_toRightOf="@+id/two"
+            app:layout_constraintRight_toLeftOf="@+id/div">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        app:layout_constraintBottom_toTopOf="@+id/constr2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/four"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/four"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/five"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/five"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/five"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/six"
+            app:layout_constraintLeft_toRightOf="@+id/four"
+            app:layout_constraintRight_toLeftOf="@+id/six">
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+
+            android:text="@string/sub"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/six"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/six"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/six"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sub"
+            app:layout_constraintLeft_toRightOf="@+id/five"
+            app:layout_constraintRight_toLeftOf="@+id/sub">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        app:layout_constraintBottom_toTopOf="@id/constr1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/seven"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/seven"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/eight"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/eight"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/eight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/nine"
+            app:layout_constraintLeft_toRightOf="@+id/seven"
+            app:layout_constraintRight_toLeftOf="@+id/nine">
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+
+            android:text="@string/add"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/nine"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/nine"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/nine"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/plus"
+            app:layout_constraintLeft_toRightOf="@+id/eight"
+            app:layout_constraintRight_toLeftOf="@+id/plus">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        app:layout_constraintBottom_toBottomOf="@+id/constr"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/clear"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/zero"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/zero"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/zero"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/dot"
+            app:layout_constraintLeft_toRightOf="@+id/clear"
+            app:layout_constraintRight_toLeftOf="@+id/dot">
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/mul"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+
+            android:text="@string/mul"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/dot"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/dot"
+            android:layout_width="@dimen/btn_wdt"
+            android:layout_height="@dimen/btn_ht"
+            android:layout_marginRight="@dimen/margin"
+            android:backgroundTint="@color/gray"
+            android:onClick="operationfun"
+            android:text="@string/point"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/mul"
+            app:layout_constraintLeft_toRightOf="@+id/zero"
+            app:layout_constraintRight_toLeftOf="@+id/mul">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
