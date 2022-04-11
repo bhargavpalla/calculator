@@ -5,7 +5,7 @@
     android:id="@+id/constr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:layout_margin="@dimen/margin"
     tools:context=".MainActivity">
 
     <EditText
@@ -19,17 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/constr">
 
     </EditText>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constr5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
-        app:layout_constraintBottom_toTopOf="@+id/constr4"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+
 
         <Button
             android:id="@+id/result"
@@ -40,10 +30,12 @@
             android:onClick="operationfun"
             android:text="@string/result"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/one"
             app:layout_constraintRight_toLeftOf="@+id/modulo"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+
+
+            >
 
         </Button>
 
@@ -53,57 +45,48 @@
             android:layout_height="@dimen/btn_ht"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
-
             android:text="@string/modulo"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/result"
+            app:layout_constraintBottom_toTopOf="@+id/div"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constr4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
+
+    <Button
+        android:id="@+id/one"
+        android:layout_width="@dimen/btn_wdt"
+        android:layout_height="@dimen/btn_ht"
         android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
-        app:layout_constraintBottom_toTopOf="@+id/constr3"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        android:backgroundTint="@color/gray"
+        android:onClick="operationfun"
+        android:text="@string/one"
+        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
 
-        <Button
-            android:id="@+id/one"
-            android:layout_width="@dimen/btn_wdt"
-            android:layout_height="@dimen/btn_wdt"
-            android:layout_marginRight="@dimen/margin"
-            android:backgroundTint="@color/gray"
-            android:onClick="operationfun"
-            android:text="@string/one"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/two"
-            app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintRight_toLeftOf="@+id/two"
+        app:layout_constraintBottom_toTopOf="@+id/four"
+        >
 
-        </Button>
+    </Button>
 
-        <Button
+    <Button
             android:id="@+id/two"
             android:layout_width="@dimen/btn_wdt"
             android:layout_height="@dimen/btn_ht"
             android:layout_marginRight="@dimen/margin"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+
+        app:layout_constraintBottom_toTopOf="@+id/five"
             android:text="@string/two"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/three"
+
             app:layout_constraintLeft_toRightOf="@+id/one"
             app:layout_constraintRight_toLeftOf="@+id/three">
 
@@ -116,14 +99,15 @@
             android:layout_height="@dimen/btn_ht"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
-
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:layout_constraintBottom_toTopOf="@+id/sub"
             android:text="@string/div"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/three"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -134,28 +118,19 @@
             android:layout_marginRight="@dimen/margin"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
+            app:layout_constraintTop_toBottomOf="@+id/modulo"
+            app:layout_constraintBottom_toTopOf="@+id/six"
             android:text="@string/three"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/div"
+
             app:layout_constraintLeft_toRightOf="@+id/two"
             app:layout_constraintRight_toLeftOf="@+id/div">
 
         </Button>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constr3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
-        app:layout_constraintBottom_toTopOf="@+id/constr2"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+
 
         <Button
             android:id="@+id/four"
@@ -166,10 +141,10 @@
             android:onClick="operationfun"
             android:text="@string/four"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/seven"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/five"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -181,9 +156,11 @@
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
             android:text="@string/five"
+            app:layout_constraintTop_toBottomOf="@id/two"
+            app:layout_constraintBottom_toTopOf="@+id/eight"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/six"
+
             app:layout_constraintLeft_toRightOf="@+id/four"
             app:layout_constraintRight_toLeftOf="@+id/six">
 
@@ -196,14 +173,15 @@
             android:layout_height="@dimen/btn_ht"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
-
+            app:layout_constraintBottom_toTopOf="@+id/plus"
+            app:layout_constraintTop_toBottomOf="@+id/div"
             android:text="@string/sub"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintLeft_toRightOf="@+id/six"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -216,26 +194,17 @@
             android:onClick="operationfun"
             android:text="@string/six"
             android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/three"
+            app:layout_constraintBottom_toTopOf="@+id/nine"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/sub"
+
             app:layout_constraintLeft_toRightOf="@+id/five"
             app:layout_constraintRight_toLeftOf="@+id/sub">
 
         </Button>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constr2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
-        app:layout_constraintBottom_toTopOf="@id/constr1"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+
 
         <Button
             android:id="@+id/seven"
@@ -246,10 +215,11 @@
             android:onClick="operationfun"
             android:text="@string/seven"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/clear"
             app:layout_constraintLeft_toLeftOf="parent"
+
             app:layout_constraintRight_toLeftOf="@+id/eight"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -263,7 +233,9 @@
             android:text="@string/eight"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/nine"
+            app:layout_constraintBottom_toTopOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@+id/five"
+
             app:layout_constraintLeft_toRightOf="@+id/seven"
             app:layout_constraintRight_toLeftOf="@+id/nine">
 
@@ -276,14 +248,14 @@
             android:layout_height="@dimen/btn_ht"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
-
+            app:layout_constraintBottom_toTopOf="@+id/mul"
+            app:layout_constraintTop_toBottomOf="@+id/sub"
             android:text="@string/add"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/nine"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -294,30 +266,19 @@
             android:layout_marginRight="@dimen/margin"
             android:backgroundTint="@color/gray"
             android:onClick="operationfun"
+            app:layout_constraintBottom_toTopOf="@+id/dot"
+            app:layout_constraintTop_toBottomOf="@+id/six"
             android:text="@string/nine"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/plus"
             app:layout_constraintLeft_toRightOf="@+id/eight"
             app:layout_constraintRight_toLeftOf="@+id/plus">
 
         </Button>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constr1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
-        app:layout_constraintBottom_toBottomOf="@+id/constr"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
 
         <Button
             android:id="@+id/clear"
@@ -328,10 +289,10 @@
             android:onClick="operationfun"
             android:text="@string/clear"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/constr"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/zero"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -345,7 +306,9 @@
             android:text="@string/zero"
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/dot"
+            app:layout_constraintBottom_toBottomOf="@id/constr"
+            app:layout_constraintTop_toBottomOf="@+id/eight"
+
             app:layout_constraintLeft_toRightOf="@+id/clear"
             app:layout_constraintRight_toLeftOf="@+id/dot">
 
@@ -363,9 +326,10 @@
             android:textColor="@color/black"
             android:textSize="@dimen/txt_size"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plus"
             app:layout_constraintLeft_toRightOf="@+id/dot"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
         </Button>
 
@@ -378,15 +342,16 @@
             android:onClick="operationfun"
             android:text="@string/point"
             android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/constr"
             android:textSize="@dimen/txt_size"
-            app:layout_constraintBaseline_toBaselineOf="@+id/mul"
+            app:layout_constraintTop_toBottomOf="@+id/nine"
+
             app:layout_constraintLeft_toRightOf="@+id/zero"
             app:layout_constraintRight_toLeftOf="@+id/mul">
 
         </Button>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
